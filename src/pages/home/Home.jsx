@@ -1,10 +1,13 @@
 import NavBar from "../../common_components/NavBar"
+import styles from "./Home.module.css"
 
 const Home = () => {
     return (
         <>
         <NavBar />
-        <h1>This is a home page</h1>
+        <div className={styles.home}>
+        <h1>Welcome to my NTF Fake Store</h1>
+        </div>
         </>
     )
 }

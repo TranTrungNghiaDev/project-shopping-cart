@@ -1,0 +1,37 @@
+@media screen and (min-width: 768px){
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .product {
+        width: 30%;
+    }
+}
+
+.product {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.product h2 {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product img {
+    height: 200px;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.product input {
+    width: 50px;
+}

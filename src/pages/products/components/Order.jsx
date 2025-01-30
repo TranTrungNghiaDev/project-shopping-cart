@@ -1,16 +1,25 @@
-const Order = ({title, image, description, price, quantity}) => {
+import {useState} from "react"
+
+const Order = ({title, image, price, defaultQuantity}) => {
+    const [quantity, setQuantity] = useState(defaultQuantity);
+
     return(
-        <>
+        <div>
         <img src={image} alt={title + " image"}/>
             <h2>{title}</h2>
-            <p>{description}
-                <br />
+            <p>
                 Price: {price}
             </p>
-            <input type="number" min={0} defaultValue={quantity}/>
+            <button onClick={() => {
+                if(quantity > 0) {
+                    setQuantity(Number(quantity) - 1)
+                }
+                } }>-</button>
+            <input type="number" min={0} value={quantity} onChange={(e) => setQuantity(e.target.value)}/>
+            <button onClick={() => {setQuantity(Number(quantity) + 1)}}>+</button>
             <button>Check Out</button>
             <button>Pay</button>
-        </>
+        </div>
     )
 }
 

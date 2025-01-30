@@ -1,29 +1,34 @@
 import Order from "./Order"
+import styles from "./Cart.module.css"
 
 const Cart = ({cartData = []}) => {
     if(cartData.length == 0) {
         return (
-            <>
-                <h2>Cart</h2>
-                <p>Your cart is empty</p>
-            </>
+            <div className={styles.cart}>
+                <h1>Cart</h1>
+                <h2>Your cart is empty</h2>
+            </div>
         )
         
     }
 
     else {
         return (
-            <>
-                <h2>Cart</h2>
+            <div className={styles.cart}>
+                <h1>Cart</h1>
+                <div className={styles.orders}>
                 {cartData.map((order, index) => 
-                <Order key={index}
+                <div className={styles.order}>
+                    <Order  
+                    key={index}
                     title={order.title} 
                     image={order.image} 
-                    description={order.description} 
                     price={order.price} 
-                    quantity={order.quantity}/>)}
-                
-            </>
+                    defaultQuantity={order.quantity}/>
+                </div>
+                )}
+                </div>
+            </div>
         )
     }
 }

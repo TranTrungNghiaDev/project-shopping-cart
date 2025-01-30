@@ -1,17 +1,18 @@
 import {useState} from "react"
 
-const Product = ({title, image, description, price,addToCartHandle}) => {
+const Product = ({title, image, price,addToCartHandle}) => {
     const [quantity, setQuantity] = useState(0);
-    const order = {title, image, description, price, quantity};
+    const order = {title, image, price, quantity};
 
     return(
         <>
             <img src={image} alt={title + " image"}/>
             <h2>{title}</h2>
-            <p>{description}
-                <br />
+            <p>
                 Price: {price}
             </p>
+            <div>
+
             <button onClick={() => {
                 if(quantity > 0) {
                     setQuantity(Number(quantity) - 1)
@@ -24,6 +25,8 @@ const Product = ({title, image, description, price,addToCartHandle}) => {
                     return addToCartHandle(order)
                 }
                 }}>Add to cart</button>
+                                
+            </div>
         </>
     )
 }

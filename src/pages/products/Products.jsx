@@ -2,6 +2,7 @@ import NavBar from "../../common_components/NavBar"
 import Product from "./components/Product"
 import Cart from "./components/Cart"
 import { useEffect, useState } from "react"
+import styles from "./Products.module.css"
 
 const Products = () => {
     const [productData, setProductData] = useState(null);
@@ -35,15 +36,20 @@ const Products = () => {
         <>
             <NavBar />
             <h1>This is a products page</h1>
-            {productData.map((product) =>
-                <Product key={product.id}
-                    title={product.title}
-                    price={product.price}
-                    description={product.description}
-                    image={product.image}
-                    addToCartHandle={addToCart}
-                />
-            )}
+            <div className={styles.products}>
+                
+                {productData.map((product) =>
+                <div className={styles.product}>
+                    <Product key={product.id}
+                        title={product.title}
+                        price={product.price}
+                        image={product.image}
+                        addToCartHandle={addToCart}
+                    />
+                </div>
+                    
+                )}
+            </div>
 
             <Cart cartData={cartData} />
         </>
