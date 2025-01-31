@@ -12,6 +12,14 @@ const Products = () => {
 
     const addToCart = (order) => {
         const newCartData = [...cartData];
+        for (let index = 0; index < newCartData.length; index++) {
+            if(order.title == newCartData[index].title)
+            {
+                newCartData[index].quantity += order.quantity
+                setCartData(newCartData)
+                return
+            }
+        }
         newCartData.push(order);
         setCartData(newCartData);
     }

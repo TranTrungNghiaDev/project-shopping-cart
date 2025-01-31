@@ -3,11 +3,11 @@ import Products from "./pages/products/Products"
 
 const routes = [
     {
-        path: "/",
+        path: "/project-shopping-cart",
         element: <Home />
     },
     {
-        path: "/products",
+        path: "/project-shopping-cart/products",
         element: <Products />
     }
 ]

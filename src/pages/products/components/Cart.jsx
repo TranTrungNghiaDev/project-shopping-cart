@@ -2,6 +2,7 @@ import Order from "./Order"
 import styles from "./Cart.module.css"
 
 const Cart = ({cartData = []}) => {
+
     if(cartData.length == 0) {
         return (
             <div className={styles.cart}>
