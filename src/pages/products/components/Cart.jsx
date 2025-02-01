@@ -19,9 +19,8 @@ const Cart = ({cartData = []}) => {
                 <h1>Cart</h1>
                 <div className={styles.orders}>
                 {cartData.map((order, index) => 
-                <div className={styles.order}>
+                <div className={styles.order} key={index}>
                     <Order  
-                    key={index}
                     title={order.title} 
                     image={order.image} 
                     price={order.price} 

@@ -47,8 +47,8 @@ const Products = () => {
             <div className={styles.products}>
                 
                 {productData.map((product) =>
-                <div className={styles.product}>
-                    <Product key={product.id}
+                <div className={styles.product} key={product.id}>
+                    <Product 
                         title={product.title}
                         price={product.price}
                         image={product.image}
